@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{{title}} - {{appName}}</title>
+		<!-- Compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+			integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+		<link rel="stylesheet" href="../static/css/style.css">
+	</head>
+	<body>
+		<div style="overflow-x:hidden;position: relative;">
+			<nav class="navbar justify-content-between" style="background-color: #033249;align-items:center;">
+				<img class="col-lg-4 col-md-4 col-sm-12" src="../static/images/logoggg.png" style="width:80%;">
+				<a href="https://play.google.com/store/apps/dev?id=4660009256913780809"
+					class="col-lg-4 col-md-4 col-sm-12 playstore-button btn-one" rel="nofollow" target="_blank"
+					style="color:white;">
+					<p class="playstore-text text-center">VISIT PLAYSTORE</p>
+				</a>
+			</nav> 
+			{% block content %} {% endblock content %} 
+			
+			<footer class="container-fluid pb-0 mb-0 mt-4 justify-content-center text-light" style="background-color:#033249;">
+				<div class="row">
+					<div class="col-md-4 col-lg-4 col-sm-12">
+						<img class="p-5" src="../static/images/logoggg.png" style="width:100%" />
+					</div>
+					<div class="col-md-4 col-lg-4 col-sm-12">
+					</div>
+					<div class="col-md-4 col-lg-4 col-sm-12 p-5 mt-5" style="align-items:center;text-align:center;">
+						{% if "Privacy" not in title %}
+							{% set appNamee = appName| replace(' ','%20') %}
+							{% set privacyPolicy = ["/",appNamee,"/privacy-policy"]|join('') %}
+							<a href={{ privacyPolicy  }}>
+								<h6 class="mb-3 mb-lg-4 bold-text text" >
+									<b style="font-size:22px;text-transform: capitalise;color:white;text-decoration:none;">
+										Privacy Policy
+									</b>
+								</h6>
+							</a>
+						{% endif %}
+						{% if "Terms" not in title %}
+							{% set appNamee = appName| replace(' ','%20') %}
+							{% set termsAndConditions = ["/",appNamee,"/terms-and-conditions"]|join('') %}
+							<a href={{ termsAndConditions  }}>
+								<h6 class="mb-3 mb-lg-4 bold-text text" >
+									<b style="font-size:25px;text-transform: capitalise;color:white;text-decoration:none;" >
+										Terms and Conditions
+									</b>
+								</h6>
+							</a>
+						{% endif %}
+					</div>
+				</div>
+			</footer>
+		</div>
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+			integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+			crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+			integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+			crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+			integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+			crossorigin="anonymous"></script>
+	</body>
+</html>
