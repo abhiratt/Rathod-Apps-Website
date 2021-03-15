@@ -4,9 +4,6 @@ html,
 body {
 	overflow-x: hidden;
 	position: fixed;
-
-	text-align: justify;
-	text-justify: inter-word;
 }
 
 a,
@@ -21,6 +18,9 @@ h6 {
 }
 
 
+a {
+	color: #033249;
+}
 
 body {
 	font-family: 'Raleway' !important;
